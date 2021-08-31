@@ -7,15 +7,13 @@ public class AdmobManager : MonoBehaviour
     [SerializeField] GameObject adsArrow;
     [SerializeField] GameObject defaultArrow;
 
-    // private readonly string UNIT_ID = "ca-app-pub-7628147742856245/2125477337"; // Àü¸é±¤°í Âð
-    // private readonly string BUNIT_ID = "ca-app-pub-7628147742856245/8319357732"; // ¹è³Ê±¤°í Âð    
-    // private readonly string UNIT_ID = "ca-app-pub-3940256099942544/1033173712"; // Àü¸é±¤°í Å×½ºÆ®
-    // private readonly string BUNIT_ID = "ca-app-pub-3940256099942544/6300978111"; // ¹è³Ê±¤°í Å×½ºÆ®
+    // private readonly string UNIT_ID = "ca-app-pub-3940256099942544/1033173712"; // ì „ë©´ê´‘ê³  í…ŒìŠ¤íŠ¸
+    // private readonly string BUNIT_ID = "ca-app-pub-3940256099942544/6300978111"; // ë°°ë„ˆê´‘ê³  í…ŒìŠ¤íŠ¸
 
-    private readonly string UNIT_ID = "ca-app-pub-7628147742856245/2125477337";
+    private readonly string UNIT_ID = "ca-app-pub-3940256099942544/1033173712";
     private readonly string TEST_ID = "ca-app-pub-3940256099942544/1033173712";
 
-    private readonly string BUNIT_ID = "ca-app-pub-7628147742856245/8319357732";
+    private readonly string BUNIT_ID = "ca-app-pub-3940256099942544/6300978111";
     private readonly string BTEST_ID = "ca-app-pub-3940256099942544/6300978111";
 
     private readonly string REMOVE_ADS = "com.kinosaji.dicepuzzle.removeads";
@@ -42,7 +40,7 @@ public class AdmobManager : MonoBehaviour
     {
         return new AdRequest.Builder().Build();
     }
-    void RequestInterstitial() // Àü¸é±¤°íÁØºñ
+    void RequestInterstitial() // ì „ë©´ê´‘ê³ ì¤€ë¹„
     {
         string unitID = Debug.isDebugBuild ? TEST_ID : UNIT_ID;
 
@@ -53,7 +51,7 @@ public class AdmobManager : MonoBehaviour
         this.interstitialAd = new InterstitialAd(unitID);
         this.interstitialAd.LoadAd(this.CreateAdRequest());
     }
-    public void ShowInterstitial() // Àü¸é±¤°í Ãâ·Â
+    public void ShowInterstitial() // ì „ë©´ê´‘ê³  ì¶œë ¥
     {
         if (this.interstitialAd.IsLoaded()) { interstitialAd.Show(); }
     }
